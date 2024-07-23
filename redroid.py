@@ -45,7 +45,7 @@ def main():
             args.android)
     tags.append(args.android)
     if args.gapps:
-        Gapps().install()
+        Gapps(android_version=args.android).install()
         dockerfile = dockerfile + "COPY gapps /\n"
         tags.append("gapps")
     if args.ndk:
