@@ -5,16 +5,15 @@ from tools.helper import get_download_dir, host, print_color, run, bcolors
 
 class Gapps(General):
     dl_links = {
-            "x86_64": ["https://cfhcable.dl.sourceforge.net/project/opengapps/x86_64/20220503/open_gapps-x86_64-10.0-pico-20220503.zip", "5fb186bfb7bed8925290f79247bec4cf"],
-            "x86": ["https://udomain.dl.sourceforge.net/project/opengapps/x86/20220122/open_gapps-x86-10.0-pico-20220122.zip", "9e39e45584b7ade4529e6be654af7b81"],
-            "arm64-v8a": ["https://liquidtelecom.dl.sourceforge.net/project/opengapps/arm64/20220122/open_gapps-arm64-10.0-pico-20220122.zip", "8dfa6e76aeb2d1d5aed40b058e8a852c"],
-            "armeabi-v7a": ["https://nav.dl.sourceforge.net/project/opengapps/arm/20220122/open_gapps-arm-10.0-pico-20220122.zip", "a48ccbd25eb0a3c5e30f5db5435f5536"]
+            "x86_64": ["https://downloads.sourceforge.net/project/opengapps/x86_64/20220503/open_gapps-x86_64-10.0-pico-20220503.zip"],
+            "x86": ["https://downloads.sourceforge.net/project/opengapps/x86/20220503/open_gapps-x86-10.0-pico-20220503.zip"],
+            "arm64-v8a": ["https://downloads.sourceforge.net/project/opengapps/arm64/20220503/open_gapps-arm64-10.0-pico-20220503.zip"],
+            "armeabi-v7a": ["https://downloads.sourceforge.net/project/opengapps/arm/20220215/open_gapps-arm-10.0-pico-20220215.zip"]
         }
     arch = host()
     download_loc = get_download_dir()
     dl_link = dl_links[arch[0]][0]
     dl_file_name = os.path.join(download_loc, "open_gapps.zip")
-    act_md5 = dl_links[arch[0]][1]
     copy_dir = "./gapps"
     extract_to = "/tmp/ogapps/extract"
     non_apks = [
